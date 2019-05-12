@@ -1,13 +1,13 @@
 import React from 'react'
 import Bgi from '../Bgi/Bgi'
 import Work from '../Work/Work'
-import About from '../About/About'
+import AboutDrawer from '../../container/AboutDrawer'
 
 const Layout = ()=>{
   return (
     <Bgi>
       <Work />
-      <About />
+      <AboutDrawer />
     </Bgi>
   )
 }
