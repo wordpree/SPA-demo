@@ -10,8 +10,7 @@ const Bgi = (props)=>{
   const img = [bicycle, wall, book, hall, adv]
   const radUrl = Math.floor(Math.random()*5)
   return (
-    <div style={{height:'61vh',overflow: 'hidden'}}>
-    <CardMedia className="bgi" image={img[radUrl]} style={{height:0,paddingTop:'43.75%'}}>
+    <CardMedia className="bgi" image={img[radUrl]} style={{height:0,paddingTop:'420px'}}>
       <div
         className="icons"
         style={
@@ -27,7 +26,6 @@ const Bgi = (props)=>{
         {props.children}
       </div>
     </CardMedia>
-    </div>
   )
 
 }

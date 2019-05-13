@@ -1,14 +1,19 @@
 import React from 'react'
+import Divider from '@material-ui/core/Divider'
 import Bgi from '../Bgi/Bgi'
-import Work from '../Work/Work'
+import WorkDrawer from '../../container/WorkDrawer'
 import AboutDrawer from '../../container/AboutDrawer'
 
 const Layout = ()=>{
   return (
-    <Bgi>
-      <Work />
-      <AboutDrawer />
-    </Bgi>
+    <React.Fragment>
+      <Bgi>
+        <WorkDrawer />
+        <AboutDrawer />
+      </Bgi>
+      <Divider variant="middle" />
+
+    </React.Fragment>
   )
 }
 
