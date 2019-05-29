@@ -14,3 +14,19 @@ export const toggleDrawerTop = open =>{
     payload:open,
   }
 }
+
+export const clickRightNav = activeIndex =>{
+
+  return {
+    type:'ARROW_CLICK',
+    payload:activeIndex+1,
+  }
+}
+
+export const clickLeftNav = activeIndex =>{
+
+  return {
+    type:'ARROW_CLICK',
+    payload:activeIndex-1,
+  }
+}

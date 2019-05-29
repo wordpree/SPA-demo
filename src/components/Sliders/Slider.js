@@ -8,15 +8,13 @@ import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
-import Grid from '@material-ui/core/Grid'
 
 const Slider = ({data})=>{
   return (
-    <Grid item lg={4}>
-      <Card style={{maxWidth:375,margin:'0 auto'}}>
+      <Card >
         <CardActionArea>
           <CardMedia
-            style={{height:140}}
+            style={{paddingTop:'56.25%',height:0}}
             image={data.url}
             title="Contemplative Reptile"
           />
@@ -38,7 +36,6 @@ const Slider = ({data})=>{
           </IconButton>
         </CardActions>
       </Card>
-    </Grid>
   )
 }
 export default Slider

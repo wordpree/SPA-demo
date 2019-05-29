@@ -5,7 +5,8 @@ import logger from 'redux-logger'
 import  rootReducer from './reducers'
 
 const initState ={
-  drawer:{right:false,top:false}
+  drawer:{right:false,top:false},
+  slider:{activeIndex:0}
 }
 const store = createStore(
   rootReducer,
