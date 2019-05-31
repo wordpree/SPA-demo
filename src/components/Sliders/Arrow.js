@@ -26,8 +26,8 @@ const NavRight = ({right})=>{
 const Arrow =({activeIndex,handleClickLeft,handleClickRight}) =>{
   return (
     <React.Fragment>
-      <NavLeft  left={()=>handleClickLeft(activeIndex<1?6:activeIndex)} />
-      <NavRight right={()=>handleClickRight(activeIndex>4?-1:activeIndex)} />
+      <NavLeft  left={()=>handleClickLeft(activeIndex<1?3:activeIndex)} />
+      <NavRight right={()=>handleClickRight(activeIndex>2?-1:activeIndex)} />
     </React.Fragment>
   )
 }
