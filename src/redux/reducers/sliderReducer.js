@@ -1,5 +1,5 @@
 const initState={
-  activeIndex:0
+  activeIndex:0,
 }
 const slider = (state=initState,actions)=>{
   switch (actions.type) {

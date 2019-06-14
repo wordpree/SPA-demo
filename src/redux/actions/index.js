@@ -30,3 +30,11 @@ export const clickLeftNav = activeIndex =>{
     payload:activeIndex-1,
   }
 }
+
+export const clickFav = id=>{
+
+  return {
+    type:'FAVORITEICON_CLICK',
+    payload:{id},
+  }
+}

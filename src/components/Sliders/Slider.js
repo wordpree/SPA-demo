@@ -18,28 +18,29 @@ const useStyles = makeStyles({
   }
 })
 
-const Slider = ({data})=>{
+const Slider = ({data,handleClickFav,favIcon})=>{
   const classes = useStyles()
+  const {url,title,content,id}=data
   return (
       <Card className={classes.card}>
         <CardActionArea>
           <CardMedia
             style={{paddingTop:'56.25%',height:0}}
-            image={data.url}
-            title="Contemplative Reptile"
+            image={url}
+            title={title}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              {data.title}
+              {title}
             </Typography>
             <Typography component="p">
-              {data.content}
+              {content}
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <IconButton aria-label="Add to favorites">
-            <FavoriteIcon />
+          <IconButton aria-label="Add to favorites" onClick={()=>handleClickFav(id)}>
+            <FavoriteIcon color={favIcon[id] ? 'secondary':'inherit'}/>
           </IconButton>
           <IconButton aria-label="Add to favorites">
               <ShareIcon />

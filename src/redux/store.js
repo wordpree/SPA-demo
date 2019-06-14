@@ -6,7 +6,8 @@ import  rootReducer from './reducers'
 
 const initState ={
   drawer:{right:false,top:false},
-  slider:{activeIndex:0}
+  slider:{activeIndex:0},
+  favorite:{favIcon:[false,false,false,false,false,false]}
 }
 const store = createStore(
   rootReducer,

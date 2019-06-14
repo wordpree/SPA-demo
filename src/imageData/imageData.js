@@ -7,37 +7,37 @@ import kid from '../assets/image/josh-applegate-slider.jpg'
 
 const data =[
   {
-    id:1,
+    id:0,
     url:icon,
     title:'icon',
     content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, libero finibus posuere congue, quam sapien tristique arcu, ut ullamcorper mi magna ac tortor. Cras sollicitudin, tortor quis ultrices maximus, leo magna ultricies nisl, vel rutrum mauris augue sed nisl'
   },
   {
-    id:2,
+    id:1,
     url:book,
     title:'book',
     content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, libero finibus posuere congue, quam sapien tristique arcu, ut ullamcorper mi magna ac tortor. Cras sollicitudin, tortor quis ultrices maximus, leo magna ultricies nisl, vel rutrum mauris augue sed nisl'
   },
   {
-    id:3,
+    id:2,
     url:portrait,
     title:'portrait',
     content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, libero finibus posuere congue, quam sapien tristique arcu, ut ullamcorper mi magna ac tortor. Cras sollicitudin, tortor quis ultrices maximus, leo magna ultricies nisl, vel rutrum mauris augue sed nisl'
   },
   {
-    id:4,
+    id:3,
     url:film,
     title:'film',
     content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, libero finibus posuere congue, quam sapien tristique arcu, ut ullamcorper mi magna ac tortor. Cras sollicitudin, tortor quis ultrices maximus, leo magna ultricies nisl, vel rutrum mauris augue sed nisl'
   },
   {
-    id:5,
+    id:4,
     url:room,
     title:'room',
     content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, libero finibus posuere congue, quam sapien tristique arcu, ut ullamcorper mi magna ac tortor. Cras sollicitudin, tortor quis ultrices maximus, leo magna ultricies nisl, vel rutrum mauris augue sed nisl'
   },
   {
-    id:6,
+    id:5,
     url:kid,
     title:'kid',
     content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, libero finibus posuere congue, quam sapien tristique arcu, ut ullamcorper mi magna ac tortor. Cras sollicitudin, tortor quis ultrices maximus, leo magna ultricies nisl, vel rutrum mauris augue sed nisl'
