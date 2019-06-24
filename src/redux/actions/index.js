@@ -38,3 +38,11 @@ export const clickFav = id=>{
     payload:{id},
   }
 }
+
+export const clickShareIcon = (shareIcon,id)=>{
+
+  return {
+    type:'EXPANDEDICON_CLICK',
+    payload:{shareIcon,id},
+  }
+}
