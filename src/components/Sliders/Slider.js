@@ -38,6 +38,24 @@ const Slider = ({data,handleClickFav,favIcon,handleClickShare,shareIcon})=>{
       'https://use.fontawesome.com/releases/v5.1.0/css/all.css'
     )
   })
+  const handleClickCopy = (url)=>{
+    if (!navigator.clipboard) {
+      const textArea = document.createElement("textarea")
+      textArea.value = url
+      document.body.appendChild(textArea)
+      textArea.focus()
+      textArea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textArea);
+      return
+    }
+    navigator.clipboard.writeText(url).then(function() {
+      console.log('Async: Copying to clipboard was successful!')
+    }, function(err) {
+      console.error('Async: Could not copy text: ', err)
+    })
+    handleClickShare(null,id)
+  }
   return (
       <Card className={classes.card}>
         <CardActionArea>
@@ -71,7 +89,7 @@ const Slider = ({data,handleClickFav,favIcon,handleClickShare,shareIcon})=>{
           open={Boolean(shareIcon[id])}
           onClose={()=>handleClickShare(null,id)}
         >
-          <MenuItem><LinkIcon className={classes.icon}/> Copy Link</MenuItem>
+          <MenuItem onClick={()=>handleClickCopy('http://localhost:3000/')}><LinkIcon className={classes.icon} /> Copy Link</MenuItem>
           <MenuItem><EmailIcon className={classes.icon}/> Email</MenuItem>
           <MenuItem><Icon className={`${classes.icon} fab fa-linkedin`}/>Linkin</MenuItem>
         </Menu>
