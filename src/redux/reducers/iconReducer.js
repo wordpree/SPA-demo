@@ -1,4 +1,4 @@
-const initState ={favIcon: [false,false,false,false,false,false],expandedIcon:[null,null,null,null,null,null]}
+const initState ={favIcon: [false,false,false,false,false,false],shareIcon:[null,null,null,null,null,null]}
 const favReducer = (state=initState,actions)=>{
   switch (actions.type) {
     case 'FAVORITEICON_CLICK':
