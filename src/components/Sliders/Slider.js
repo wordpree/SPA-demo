@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardActions from '@material-ui/core/CardActions'
@@ -9,12 +9,13 @@ import IconButton from '@material-ui/core/IconButton'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 import { makeStyles } from '@material-ui/core/styles'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   card: {
     minWidth: 485,
-    margin:12,
+    margin:'0.75em',
     flex:1,
   },
   menu:{
@@ -22,12 +23,20 @@ const useStyles = makeStyles({
   },
 })
 
-const Slider = ({data,handleClickFav,favIcon,handleClickShare,shareIcon})=>{
+const Slider = ({data,handleClickFav,favIcon,handleResizeWidth,width})=>{
   const classes = useStyles()
   const {url,title,content,id}=data
-
+  const lg = useMediaQuery('(min-width:1280px)')
+  const md = useMediaQuery('(max-width:960px)')
+  width = window.innerWidth
+  const cardWidth = md ? width*0.95 : lg ? 0.83*width/3 : 0.83*width/2
+console.log(md,lg,width)
+  useEffect(()=>{
+    window.addEventListener('resize',()=>handleResizeWidth(window.innerWidth))
+    return ()=>window.removeEventListener('resize',()=>handleResizeWidth(window.innerWidth))
+  })
   return (
-      <Card className={classes.card}>
+      <Card className={classes.card} style={{minWidth:cardWidth+'px'}}>
         <Link to={`/${id}`} style={{textDecoration:'none',color:'inherit'}}>
           <CardActionArea>
             <CardMedia

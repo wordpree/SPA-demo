@@ -62,11 +62,11 @@ const CardSingle = (props)=>{
             open={Boolean(shareIcon[id])}
             onClose={()=>handleClickShare(null,id)}
           >
-            <MenuItem><LinkPlus className={classes.icon} /> Copy Link</MenuItem>
-            <MenuItem><Email className={classes.icon}/> Email</MenuItem>
-            <MenuItem><Linkedin className={classes.icon}/>Linkedin</MenuItem>
-            <MenuItem><Twitter className={classes.icon}/>Twitter</MenuItem>
-            <MenuItem><Facebook className={classes.icon}/>Facebook</MenuItem>
+            <MenuItem><LinkPlus className={classes.icon} />Copy Link</MenuItem>
+            <MenuItem><Email className={classes.icon} />Email</MenuItem>
+            <MenuItem><Linkedin className={classes.icon} />Linkedin</MenuItem>
+            <MenuItem><Twitter className={classes.icon} />Twitter</MenuItem>
+            <MenuItem><Facebook className={classes.icon} />Facebook</MenuItem>
           </Menu>
         </Grid>
       </Grid>

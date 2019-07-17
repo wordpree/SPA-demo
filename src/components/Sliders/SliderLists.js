@@ -1,20 +1,37 @@
 import React from 'react'
 import Slider from './Slider'
 import Arrow from './Arrow'
+import { withStyles  } from '@material-ui/core/styles'
 import data from '../../imageData/imageData'
 
-const wrapper = {
-  position:'absolute',
-  display:'flex',
-  transition:'transform 0.5s ease-in-out'
-}
+const styles = theme =>({
+  wrapper: {
+    position:'absolute',
+    display:'flex',
+    transition:'transform 0.5s ease-in-out'
+  },
+  carouselEntry:{
+    [theme.breakpoints.up('md')]:{
+      maxWidth:'83%',
+    },
+    maxWidth:'95%',
+    margin:'0 auto',
+    position:'relative'
+  },
+  carousel:{
+    position:'relative',
+    minHeight:'528px',
+    overflow:'hidden'
+  },
+})
 
 const SliderLists = (props)=>{
+  const {classes} = props
   return (
-    <div className="carousel-entry" style={{maxWidth:'81%',margin:'0 auto',position:'relative'}}>
+    <div className={classes.carouselEntry} >
       <Arrow {...props}/>
-      <div className="carousel" style={{position:'relative',minHeight:'528px',overflow:'hidden'}}>
-        <div className="wrapper" style={{...wrapper,transform:`translateX(${-100/data.length*props.activeIndex}%)`}}>
+      <div className={classes.carousel}>
+        <div className={classes.wrapper} style={{transform:`translateX(${-100/data.length*props.activeIndex}%)`}}>
           {data.map(item=><Slider key={item.id} data={item} {...props}/>)}
         </div>
       </div>
@@ -22,4 +39,4 @@ const SliderLists = (props)=>{
   )
 }
 
-export default SliderLists
+export default withStyles(styles)(SliderLists)

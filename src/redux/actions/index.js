@@ -46,3 +46,11 @@ export const clickShareIcon = (shareIcon,id)=>{
     payload:{shareIcon,id},
   }
 }
+
+export const handleWidth = width=>{
+
+  return {
+    type:'WINDOW_RESIZE',
+    payload:width,
+  }
+}

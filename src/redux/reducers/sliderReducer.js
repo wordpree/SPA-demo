@@ -1,5 +1,6 @@
 const initState={
   activeIndex:0,
+  width:0,
 }
 const slider = (state=initState,actions)=>{
   switch (actions.type) {
@@ -7,6 +8,11 @@ const slider = (state=initState,actions)=>{
       return {
         ...state,
         activeIndex:actions.payload
+      }
+    case 'WINDOW_RESIZE':
+      return {
+        ...state,
+        width:actions.payload
       }
     default:
       return state
