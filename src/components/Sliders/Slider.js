@@ -32,11 +32,11 @@ const Slider = ({data,handleClickFav,favIcon,handleResizeWidth,cardWidth})=>{
   const md = useMediaQuery('(max-width:960px)')
 
   const handleWidth = (mgn,number,percent)=> (window.innerWidth*percent-mgn)/number
-  cardWidth =  md ? handleWidth(0,1,0.9) : lg ? handleWidth(17.5,3,0.85): handleWidth(17.5,2,0.85)
+  cardWidth =  md ? handleWidth(0,1,0.9) : lg ? handleWidth(35,3,0.85): handleWidth(17.5,2,0.85)
   useEffect(()=>{
     const throttleHandleResize = throttle(()=>handleResize(),250)
     function handleResize(){
-        const cWidth =  md ? handleWidth(0,1,0.9) : lg ? handleWidth(17.5,3,0.85): handleWidth(17.5,2,0.85)
+        const cWidth =  md ? handleWidth(0,1,0.9) : lg ? handleWidth(35,3,0.85): handleWidth(17.5,2,0.85)
         handleResizeWidth(cWidth)
       }
     window.addEventListener('resize',throttleHandleResize)
