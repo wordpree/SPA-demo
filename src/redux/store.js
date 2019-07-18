@@ -6,7 +6,7 @@ import  rootReducer from './reducers'
 
 const initState ={
   drawer:{right:false,top:false},
-  slider:{activeIndex:0,width:0},
+  slider:{activeIndex:0,cardWidth:window.innerWidth},
   icon:{favIcon:[false,false,false,false,false,false],shareIcon:[null,null,null,null,null,null]},
 
 }

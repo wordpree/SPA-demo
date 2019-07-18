@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 const mapStateToProps= state =>({
   activeIndex:state.slider.activeIndex,
-  width:state.slider.width,
+  cardWidth:state.slider.cardWidth,
   favIcon:state.icon.favIcon,
   shareIcon:state.icon.shareIcon,
 
@@ -12,7 +12,7 @@ const mapStateToProps= state =>({
 const mapDispatchToProps=dispatch=>({
   handleClickLeft:activeIndex=>dispatch( clickLeftNav(activeIndex) ),
   handleClickRight:activeIndex=>dispatch( clickRightNav(activeIndex) ),
-  handleResizeWidth:width=>dispatch(handleWidth(width) ),
+  handleResizeWidth:cardWidth=>dispatch(handleWidth(cardWidth) ),
   handleClickFav:id=>dispatch( clickFav(id) ),
   handleClickShare:(shareIcon,id)=>dispatch( clickShareIcon(shareIcon,id) ),
 })

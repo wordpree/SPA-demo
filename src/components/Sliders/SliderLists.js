@@ -12,9 +12,9 @@ const styles = theme =>({
   },
   carouselEntry:{
     [theme.breakpoints.up('md')]:{
-      maxWidth:'83%',
+      maxWidth:'85%',
     },
-    maxWidth:'95%',
+    maxWidth:'90%',
     margin:'0 auto',
     position:'relative'
   },

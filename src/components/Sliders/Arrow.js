@@ -3,6 +3,7 @@ import Fab from '@material-ui/core/Fab'
 import ArrowLeft from '@material-ui/icons/ChevronLeft'
 import ArrowRight from '@material-ui/icons/ChevronRight'
 import { makeStyles } from '@material-ui/core/styles'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const useStyles = makeStyles({
   nav:{
@@ -16,22 +17,22 @@ const useStyles = makeStyles({
   }
 })
 
-const NavLeft = ({left})=>{
+const NavLeft = ({left,bp})=>{
   const classes=useStyles()
   return (
-    <div className={classes.nav} style={{left:'-13.5px'}}>
-      <Fab size="medium" classes={{secondary:classes.secondary}} color="secondary" aria-label="nav-left" onClick={left}>
+    <div className={classes.nav} style={{left:bp? '-20px':'-24px'}}>
+      <Fab size={bp?'small':'medium'} classes={{secondary:classes.secondary}} color="secondary" aria-label="nav-left" onClick={left}>
         <ArrowLeft/>
       </Fab>
     </div>
   )
 }
 
-const NavRight = ({right})=>{
+const NavRight = ({right,bp})=>{
   const classes=useStyles()
   return (
-    <div className={classes.nav} style={{right:'-13.5px'}}>
-      <Fab size="medium" classes={{secondary:classes.secondary}} color="secondary" aria-label="nav-right" onClick={right}>
+    <div className={classes.nav} style={{right:bp? '-20px':'-24px'}}>
+      <Fab size={bp?'small':'medium'} classes={{secondary:classes.secondary}} color="secondary" aria-label="nav-right" onClick={right}>
         <ArrowRight/>
       </Fab>
     </div>
@@ -39,10 +40,11 @@ const NavRight = ({right})=>{
 }
 
 const Arrow =({activeIndex,handleClickLeft,handleClickRight}) =>{
+  const md = useMediaQuery('(max-width:960px)')
   return (
     <React.Fragment>
-      <NavLeft  left={()=>handleClickLeft(activeIndex<1?3:activeIndex)} />
-      <NavRight right={()=>handleClickRight(activeIndex>2?-1:activeIndex)} />
+      <NavLeft bp={md} left={()=>handleClickLeft(activeIndex<1?3:activeIndex)} />
+      <NavRight bp={md} right={()=>handleClickRight(activeIndex>2?-1:activeIndex)} />
     </React.Fragment>
   )
 }

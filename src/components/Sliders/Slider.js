@@ -11,30 +11,38 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 import { makeStyles } from '@material-ui/core/styles'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { Link } from 'react-router-dom'
+import throttle from 'lodash/throttle'
 
 const useStyles = makeStyles({
   card: {
     minWidth: 485,
-    margin:'0.75em',
+    marginRight:'1.25em',
     flex:1,
+
   },
   menu:{
     display: 'flex',
   },
 })
 
-const Slider = ({data,handleClickFav,favIcon,handleResizeWidth,width})=>{
+const Slider = ({data,handleClickFav,favIcon,handleResizeWidth,cardWidth})=>{
   const classes = useStyles()
   const {url,title,content,id}=data
   const lg = useMediaQuery('(min-width:1280px)')
   const md = useMediaQuery('(max-width:960px)')
-  width = window.innerWidth
-  const cardWidth = md ? width*0.95 : lg ? 0.83*width/3 : 0.83*width/2
-console.log(md,lg,width)
+
+  const handleWidth = (mgn,number,percent)=> (window.innerWidth*percent-mgn)/number
+  cardWidth =  md ? handleWidth(0,1,0.9) : lg ? handleWidth(17.5,3,0.85): handleWidth(17.5,2,0.85)
   useEffect(()=>{
-    window.addEventListener('resize',()=>handleResizeWidth(window.innerWidth))
-    return ()=>window.removeEventListener('resize',()=>handleResizeWidth(window.innerWidth))
+    const throttleHandleResize = throttle(()=>handleResize(),250)
+    function handleResize(){
+        const cWidth =  md ? handleWidth(0,1,0.9) : lg ? handleWidth(17.5,3,0.85): handleWidth(17.5,2,0.85)
+        handleResizeWidth(cWidth)
+      }
+    window.addEventListener('resize',throttleHandleResize)
+    return ()=>window.removeEventListener('resize',throttleHandleResize)
   })
+
   return (
       <Card className={classes.card} style={{minWidth:cardWidth+'px'}}>
         <Link to={`/${id}`} style={{textDecoration:'none',color:'inherit'}}>
