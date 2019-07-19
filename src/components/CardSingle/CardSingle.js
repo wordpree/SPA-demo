@@ -8,7 +8,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import {Email,Twitter,Linkedin,Facebook,LinkPlus} from 'mdi-material-ui'
+import { Link } from 'react-router-dom'
+import {Email,Twitter,Linkedin,Facebook,LinkPlus,ArrowLeftCircle} from 'mdi-material-ui'
 import data from '../../imageData/imageData'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -25,6 +26,9 @@ const useStyles = makeStyles({
   icon:{
     margin:'0.5em'
   },
+  iconBtn:{
+    display:'flex'
+  },
 })
 
 const CardSingle = (props)=>{
@@ -37,23 +41,30 @@ const CardSingle = (props)=>{
   return (
     <Container maxWidth='xl'>
       <Grid container className={classes.root} spacing={6}>
-        <Grid item xs={6} >
+        <Grid item xs={12} md={6}>
           <img className={classes.img} alt="complex" src={url} />
         </Grid>
-        <Grid item xs={6} >
+        <Grid item xs={12} md={6}>
           <Typography variant="h5" component="h2">
             {title}
           </Typography>
           <Typography component="p">
             {content}
           </Typography>
-            <Divider variant="middle" style={{margin:'1.25em 0'}}/>
-          <IconButton aria-label="Add to favorites" onClick={()=>handleClickFav(id)}>
-            <FavoriteIcon color={favIcon[id] ? 'secondary':'inherit'}/>
-          </IconButton>
-          <IconButton aria-label="Share" onClick={evt=>handleClickShare(evt.currentTarget,id)}>
-            <ShareIcon />
-          </IconButton>
+          <Divider variant="middle" style={{margin:'1.25em 0'}}/>
+          <div className={classes.iconBtn} >
+            <IconButton aria-label="Add to favorites" onClick={()=>handleClickFav(id)}>
+              <FavoriteIcon color={favIcon[id] ? 'secondary':'inherit'}/>
+            </IconButton>
+            <IconButton aria-label="Share" onClick={evt=>handleClickShare(evt.currentTarget,id)}>
+              <ShareIcon />
+            </IconButton>
+            <IconButton aria-label="go back" style={{marginLeft:'auto'}}>
+              <Link to={'/'} style={{color:'inherit'}}>
+                <ArrowLeftCircle />
+              </Link>
+            </IconButton>
+          </div>
           <Menu
             className={classes.menu}
             id="share-menu"
