@@ -15,10 +15,8 @@ import throttle from 'lodash/throttle'
 
 const useStyles = makeStyles({
   card: {
-    minWidth: 485,
     marginRight:'1.25em',
     flex:1,
-
   },
   menu:{
     display: 'flex',

@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
@@ -10,6 +11,7 @@ import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import { Link } from 'react-router-dom'
 import {Email,Twitter,Linkedin,Facebook,LinkPlus,ArrowLeftCircle} from 'mdi-material-ui'
+import { FbShareBtn,TwShareBtn } from './SocialMedia';
 import data from '../../imageData/imageData'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -24,10 +26,15 @@ const useStyles = makeStyles({
     display: 'flex',
   },
   icon:{
-    margin:'0.5em'
+    margin:'0.5em',
+    alignSelf:'center'
+  },
+  social:{
+    alignSelf:'center'
   },
   iconBtn:{
-    display:'flex'
+    display:'flex',
+    alignItems: 'center'
   },
 })
 
@@ -73,15 +80,26 @@ const CardSingle = (props)=>{
             open={Boolean(shareIcon[id])}
             onClose={()=>handleClickShare(null,id)}
           >
-            <MenuItem><LinkPlus className={classes.icon} />Copy Link</MenuItem>
-            <MenuItem><Email className={classes.icon} />Email</MenuItem>
-            <MenuItem><Linkedin className={classes.icon} />Linkedin</MenuItem>
-            <MenuItem><Twitter className={classes.icon} />Twitter</MenuItem>
-            <MenuItem><Facebook className={classes.icon} />Facebook</MenuItem>
+            <MenuItem>
+              <LinkPlus className={classes.icon} />Copy Link
+            </MenuItem>
+            <MenuItem>
+              <Email className={classes.icon} />Email
+            </MenuItem>
+            <MenuItem>
+              <Linkedin className={classes.icon} /><span>Linkedin</span>
+            </MenuItem>
+            <MenuItem>
+              <TwShareBtn><Twitter className={classes.icon} /><span className={classes.social}>Twitter</span></TwShareBtn>
+            </MenuItem>
+            <MenuItem>
+              <FbShareBtn id={id}><Facebook className={classes.icon} /><span className={classes.social}>Facebook</span></FbShareBtn>
+            </MenuItem>
           </Menu>
         </Grid>
       </Grid>
     </Container>
   )
 }
+
 export default CardSingle
