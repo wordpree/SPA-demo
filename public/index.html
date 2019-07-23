@@ -5,6 +5,15 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="url"    property="og:url" content="https://spa-demo-e4d44.firebaseapp.com" />
+    <meta name="type"   property="og:type"        content="article" />
+    <meta name="title"  property="og:title"       content="A SPA demo" />
+    <meta name="author" content="webDev">
+    <meta name="description"  property="og:description" content="build a SPA with reactjs leveraging on redux and Material UI" />
+    <meta name="image"        property="og:image"       content="https://spa-demo-e4d44.firebaseapp.com/static/media/snapshot.60fdb371.jpg" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SPA buit with reactjs">
+    <meta name="twitter:image" content="https://spa-demo-e4d44.firebaseapp.com/static/media/snapshot.60fdb371.jpg">
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -22,6 +31,8 @@
     <title>React App</title>
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
