@@ -19,7 +19,7 @@ you can visit [hosting within netlify](https://jun-spa-demo.netlify.com/)
 
 # Clone
 
-Clone this repositories using :git clone https://github.com/wordpree/gallery.git
+Clone this repositories using :git clone https://github.com/wordpree/SPA-demo.git
 
 # Install modules and dependencies
 
