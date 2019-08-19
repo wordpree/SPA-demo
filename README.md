@@ -15,7 +15,7 @@ You will also see any lint errors in the console.
 # Hosting
 
 please see this link [hosting within firebase](https://spa-demo-e4d44.firebaseapp.com/) or
-you can visit [hosting within netlify](https://jun-spa-demo.netlify.com/)
+you can visit [hosting within netlify](https://spa-demo.netlify.com/)
 
 # Clone
 
